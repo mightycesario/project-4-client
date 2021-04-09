@@ -11,11 +11,12 @@ export class EditPlayer extends Component {
   }
 
   handleSubmit = (e) => {
-    // e.preventDefault()
+    e.preventDefault()
+    console.log("age::::", this.state.age)
 
     PlayerModel.update(this.props.playerId, this.state)
-      .then(data => {
-          console.log(data)
+      .then(data => {    
+          this.props.updateAfterEdit(data)
       })
   }
 
@@ -34,7 +35,7 @@ export class EditPlayer extends Component {
   render() {
     return (
       <div class="component-content">
-        <h2 style={{textAlign:"center"}}>New Player</h2>
+        <h2 style={{textAlign:"center"}}>Edit Player</h2>
         <form onSubmit={this.handleSubmit}>
 
           <div className="form-input">
@@ -59,7 +60,7 @@ export class EditPlayer extends Component {
             <label htmlFor="completed">Age</label>
             <input 
               type="text" 
-              id="age" 
+              name="age" 
               onChange={this.handleChange} 
               value={this.state.age} />
           </div>
@@ -73,7 +74,7 @@ export class EditPlayer extends Component {
               value={this.state.photo} />
           </div>
 
-          <input type="submit" value="Save!"/>
+          <p><input class="btn" type="submit" value="Save!"/></p>
         </form>
       </div>
     )

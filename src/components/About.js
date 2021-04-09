@@ -21,9 +21,8 @@ export class About extends Component {
   
   render() {
     return (
-      <div>
-        From about component {this.textContent = this.state.test ? this.state.test : "nothing"}
-        Hi My name is Cesario Mendoza. Im a big football fan so I wanted to make an application for a football fan like myself. 
+      <div className="component-content"> 
+        Hi My name is Cesario Mendoza. Im a big football fan so I wanted to make an application where people can add and store information regarding football players for football fans like myself. 
       </div>
     )
   }

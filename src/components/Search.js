@@ -7,7 +7,7 @@ import Searchbar from './Searchbar'
 export class Search extends Component {
   render() {
     return (
-      <div>
+      <div className="component-content">
         <Searchbar/>       
       </div>
     )

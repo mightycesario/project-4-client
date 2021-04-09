@@ -59,7 +59,7 @@ export default class NewPlayer extends Component {
             <label htmlFor="completed">Age</label>
             <input 
               type="text" 
-              id="age" 
+              name="age" 
               onChange={this.handleChange} 
               value={this.state.age} />
           </div>
@@ -73,7 +73,7 @@ export default class NewPlayer extends Component {
               value={this.state.photo} />
           </div>
 
-          <input type="submit" value="Save!"/>
+          <p><input class="btn" type="submit" value="Save!" className="btn"/></p>
         </form>
       </div>
     )

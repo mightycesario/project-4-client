@@ -23,7 +23,7 @@ export class Searchbar extends Component {
   render() {
     return (
       <div>
-        <input type="text" placeholder="enter a players name" onChange={this.nameChangeHandler}/><button onClick={this.clickHandlers}>Find</button>
+        <input type="text" placeholder="enter a players name" onChange={this.nameChangeHandler}/><button className="btn" onClick={this.clickHandlers}>Find</button>
       </div>
     )
   }

@@ -27,7 +27,7 @@ export class PlayerList extends Component {
         let playerList = data.player !== undefined 
         ? 
           data.player.map((player, index) => {
-            return (<Link to={`/players/${player._id}`} key={index}>
+            return (<Link to={`/players/${player._id}`} className={"nav-links"} key={index}>
                       <h4>{player.name}</h4>
                     </Link>) //<PlayerCard {...player}/>
           }) 
@@ -48,7 +48,7 @@ export class PlayerList extends Component {
     
     return (
       <div>
-        <h1>Your Players</h1>
+        {/* <h1>{!this.state.players.length ? this.textContent="There are currently no players in the database. Add some players!" : this.state.players}</h1> */}
         <ul>
           <ContentContainer playerData={this.state.players} playerLinks={this.state.playerLinks ? this.state.playerLinks : "Loading players...."} />
         </ul>

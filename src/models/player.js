@@ -39,7 +39,18 @@ class PlayerModel {
       }
     )
       .then(res => res.json())
+  }
 
+  static destroy = (playerId) => {
+    return fetch(`${url}/players/${playerId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    )
+    .then(res => res.json())
   }
 
   // new method to get 1 id , show like the Show page
