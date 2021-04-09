@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import PlayerModel from '../models/player'
 
-export default class NewPlayer extends Component {
+export class EditPlayer extends Component {
   
   state = {
-    name: "",
-    team: "",
-    age: "",
-    photo: ""
+    name: this.props.name,
+    team: this.props.team,
+    age: this.props.age,
+    photo: this.props.photo,
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
 
-    PlayerModel.create(this.state)
+    PlayerModel.update(this.props.playerId, this.state)
       .then(data => {
-        this.props.history.push("/players")
+          console.log(data)
       })
   }
 
@@ -27,9 +27,9 @@ export default class NewPlayer extends Component {
     this.setState({
       [e.target.name]: e.target.value
     })
-  }  
+  }
   
-
+  
   
   render() {
     return (
@@ -79,3 +79,5 @@ export default class NewPlayer extends Component {
     )
   }
 }
+
+export default EditPlayer

@@ -8,7 +8,7 @@ export class Header extends Component {
         <header>
           <h1><Link to="/" className="logo">the side<span style={{color:"#46b7b7"}}>line</span></Link></h1>
           <nav>
-            <ul>
+            <ul className="nav-links">
               <li><Link to="/about">about</Link></li>
               {/* <li><Link to="/contenttwo">contenttwo</Link></li> */}
               <li><Link to="/players">players</Link></li>

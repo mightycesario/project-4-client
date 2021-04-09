@@ -28,6 +28,20 @@ class PlayerModel {
     .then(res =>   res.json())
   }
 
+  static update = (playerId, playerData) => {
+    return fetch(`${url}/players/${playerId}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(playerData)
+      }
+    )
+      .then(res => res.json())
+
+  }
+
   // new method to get 1 id , show like the Show page
 
 

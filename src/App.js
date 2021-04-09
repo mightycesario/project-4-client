@@ -11,6 +11,7 @@ import ContentTwo from './components/ContentTwo'
 import Search from './components/Search'
 import NewPlayer from './pages/NewPlayer'
 import PlayerShow from './components/PlayerShow'
+import EditPlayer from './components/EditPlayer';
 
 
 
@@ -24,7 +25,8 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/players/new" component={NewPlayer} />
         <Route path='/players/:id' component={ PlayerShow } />
-        <Route path="/contenttwo" component={ContentTwo} />
+        <Route path="/players/:id" component={EditPlayer} />
+        {/* <Route path="/contenttwo" component={ContentTwo} /> */}
         <Route path="/search" component={Search} />
         <Route path="/players" component={PlayerList} />
 

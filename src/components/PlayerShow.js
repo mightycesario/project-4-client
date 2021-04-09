@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PlayerModel from '../models/player'
+import EditPlayer from './EditPlayer'
 
 export class PlayerShow extends Component {
   
@@ -10,7 +11,8 @@ export class PlayerShow extends Component {
     name: "",
     team: "",
     age: "",
-    photo: ""
+    photo: "",
+    toggleEdit: false
   }
 
 
@@ -32,15 +34,22 @@ export class PlayerShow extends Component {
         })
       })
   }
+
+  editToggle = () => {
+    this.setState({
+      toggleEdit: !this.state.toggleEdit
+    })
+  }
   
   render() {
     return (
       <div>
-        <h1 style={{marginTop:"10px"}}><img width="450" height="250" src={this.state.photo} /></h1>
+        <h1 style={{marginTop:"10px"}}><img className="player-show-image" width="450" height="250" src={this.state.photo} /></h1>
         <h1>{this.state.name}</h1>
         <h1>{this.state.team}</h1>
         <h1>{this.state.age}</h1>
-        <h1><button  className="btn">Edit Player</button></h1>
+        <h1><button className="btn" onClick={this.editToggle}>Edit Player</button></h1>
+        {this.state.toggleEdit && <EditPlayer name={this.state.name} team={this.state.team} age={this.state.age} photo={this.state.photo} playerId={this.props.match.params.id}/>}
       </div>
     )
   }
