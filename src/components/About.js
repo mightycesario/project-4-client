@@ -23,6 +23,7 @@ export class About extends Component {
     return (
       <div>
         From about component {this.textContent = this.state.test ? this.state.test : "nothing"}
+        Hi My name is Cesario Mendoza. Im a big football fan so I wanted to make an application for a football fan like myself. 
       </div>
     )
   }

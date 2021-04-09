@@ -59,7 +59,7 @@ export default class NewPlayer extends Component {
           <div className="form-input">
             <label htmlFor="completed">Age</label>
             <input 
-              type="number" 
+              type="text" 
               id="age" 
               onChange={this.handleChange} 
               value={this.state.age} />

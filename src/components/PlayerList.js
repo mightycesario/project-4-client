@@ -24,20 +24,22 @@ export class PlayerList extends Component {
     PlayerModel.all()
       .then(data => {
         console.log("fetchData call AFTER hook", data) 
-        let playerList = data.player !== undefined ? 
+        let playerList = data.player !== undefined 
+        ? 
           data.player.map((player, index) => {
-        return (<Link to={`/players/${player._id}`} key={index}>
-                  <h4>{player.name}</h4>
-                </Link>) //<PlayerCard {...player}/>
-    }) : <></>
-    console.log(playerList)
-    this.setState({ playerLinks: playerList, players: data.player})
-        // this.setState({ players: data.player})
+            return (<Link to={`/players/${player._id}`} key={index}>
+                      <h4>{player.name}</h4>
+                    </Link>) //<PlayerCard {...player}/>
+          }) 
+        : 
+          <></>
+        console.log(playerList)
+        this.setState({ playerLinks: playerList, players: data.player})
       }) 
   }
 
   componentDidUpdate() {
-    console.log("=======in render in PlayerList ======", this.state.players)
+    console.log("======= in render in PlayerList ======", this.state.players)
     
 
   }
@@ -46,6 +48,7 @@ export class PlayerList extends Component {
     
     return (
       <div>
+        <h1>Your Players</h1>
         <ul>
           <ContentContainer playerData={this.state.players} playerLinks={this.state.playerLinks ? this.state.playerLinks : "Loading players...."} />
         </ul>

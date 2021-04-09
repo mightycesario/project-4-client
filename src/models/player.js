@@ -23,6 +23,13 @@ class PlayerModel {
     }).then(res => res.json())
   }
 
+  static show = (playerId) => {
+    return fetch(`${url}/players/${playerId}`)
+    .then(res =>   res.json())
+  }
+
+  // new method to get 1 id , show like the Show page
+
 
 }
 
