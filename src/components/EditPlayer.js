@@ -6,6 +6,7 @@ export class EditPlayer extends Component {
   state = {
     name: this.props.name,
     team: this.props.team,
+    position: this.props.position,
     age: this.props.age,
     photo: this.props.photo,
   }
@@ -38,8 +39,8 @@ export class EditPlayer extends Component {
         <h2 style={{textAlign:"center"}}>Edit Player</h2>
         <form onSubmit={this.handleSubmit}>
 
-          <div className="form-input">
-            <label htmlFor="title">Name</label>
+        <div className="form-input">
+            <label htmlFor="name">Name</label><br/>
             <input 
               type="text" 
               name="name" 
@@ -48,7 +49,16 @@ export class EditPlayer extends Component {
           </div>
 
           <div className="form-input">
-            <label htmlFor="publisher">Team</label>
+            <label htmlFor="position">Position</label><br/>
+            <input 
+              type="text" 
+              name="position" 
+              onChange={this.handleChange}
+              value={this.state.position} />
+          </div>
+
+          <div className="form-input">
+            <label htmlFor="publisher">Team</label><br/>
             <input 
               type="text" 
               name="team" 
@@ -57,7 +67,7 @@ export class EditPlayer extends Component {
           </div>
 
           <div className="form-input">
-            <label htmlFor="completed">Age</label>
+            <label htmlFor="completed">Age</label><br/>
             <input 
               type="text" 
               name="age" 
@@ -66,7 +76,7 @@ export class EditPlayer extends Component {
           </div>
 
           <div className="form-input">
-            <label htmlFor="coverArtUrl">Image URL</label>
+            <label htmlFor="coverArtUrl">Image URL</label><br/>
             <input 
               type="text" 
               name="photo" 

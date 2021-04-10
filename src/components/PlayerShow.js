@@ -10,6 +10,7 @@ export class PlayerShow extends Component {
   state = {
     name: "",
     team: "",
+    position: "",
     age: 0,
     photo: "Add a photo!",
     toggleEdit: false
@@ -29,6 +30,7 @@ export class PlayerShow extends Component {
         this.setState({
           name: res.player.name,
           team: res.player.team,
+          team: res.player.position,
           age:  res.player.age,
           photo: res.player.photo
         })
@@ -46,6 +48,7 @@ export class PlayerShow extends Component {
     this.setState({
       name: passedInData.player.name,
       team: passedInData.player.team,
+      position: passedInData.player.position,
       age: passedInData.player.age,
       photo: passedInData.player.photo
     })
@@ -61,13 +64,14 @@ export class PlayerShow extends Component {
   render() {
     return (
       <div>
-        <h1 style={{marginTop:"10px"}}>
+        <h3 style={{marginTop:"10px"}}>
           {!this.state.photo ? this.textContent="Add a player photo!" : <img className="player-show-image" width="450" height="250" src={this.state.photo} />}
-        </h1>
-        <h1>Name: {this.state.name}</h1>
-        <h1>Team: {this.state.team}</h1>
-        <h1>Age: {this.state.age}</h1>
-        <h1><button className="btn" onClick={this.editToggle}>Edit</button><button onClick={this.handleDelete} style={{marginLeft:"30px"}} className="btn">Delete</button></h1>
+        </h3>
+        <h3>Name: {this.state.name}</h3>
+        <h3>Team: {this.state.team}</h3>
+        <h3>Position: {this.state.position}</h3>
+        <h3>Age: {this.state.age}</h3>
+        <h3><button className="btn" onClick={this.editToggle}>Edit</button><button onClick={this.handleDelete} style={{marginLeft:"30px"}} className="btn">Delete</button></h3>
         {this.state.toggleEdit && <EditPlayer updateAfterEdit={this.updateAfterEdit} name={this.state.name} team={this.state.team} age={this.state.age} photo={this.state.photo} playerId={this.props.match.params.id}/>}
       </div>
     )
