@@ -243,8 +243,14 @@ ul input[type="checkbox"] {
 ---------------------------------------------------*/
 
 
+html {
+  background-image: url("./lightning-orange-bg-1980-rotate.jpg");
+  background-size:100%;
+}
+
 body, h1 {
-  font-family: Arial
+  font-family: Arial;
+  color:black;
 }
 
 
@@ -274,6 +280,7 @@ nav ul li {
   margin: 10px;
   padding: 20px;
   text-align: left;
+  background-color: #ccc;
 }
 
 .component-content a {

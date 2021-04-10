@@ -31,7 +31,7 @@ function App() {
         <Route path="/players" component={PlayerList} />
 
       </Switch> 
-      <ContentContainer />
+      {/* <ContentContainer /> */}
     </div>
   );
 }

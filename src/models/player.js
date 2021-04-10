@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const url = "http://localhost:4000/api/v1"
+const url = process.env.REACT_APP_API || "https://react-sideline-api.herokuapp.com/api/v1"
 
 
 class PlayerModel {

@@ -48,6 +48,7 @@ export class PlayerList extends Component {
     
     return (
       <div>
+        There are currently <span style={{color:"orange", fontWeight:"bold", fontSize:"30px"}}>{this.state.players.length}</span> players
         {/* <h1>{!this.state.players.length ? this.textContent="There are currently no players in the database. Add some players!" : this.state.players}</h1> */}
         <ul>
           <ContentContainer playerData={this.state.players} playerLinks={this.state.playerLinks ? this.state.playerLinks : "Loading players...."} />
