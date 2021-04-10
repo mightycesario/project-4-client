@@ -6,7 +6,8 @@ export class Header extends Component {
     return (
       <div>
         <header>
-          <h1><Link to="/" className="logo">the side<span style={{color:"#46b7b7"}}>line</span></Link></h1>
+          <h1><Link to="/" className="logo">the side<span style={{color:"#46b7b7"}}>line</span><span class="material-icons">
+sports_rugby</span></Link></h1>
           <nav>
             <ul className="nav-links">
               <li><Link to="/about">about</Link></li>

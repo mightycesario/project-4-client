@@ -310,3 +310,8 @@ nav ul li {
 .player-show-image {
   border: 3px solid #ffa805;
 }
+
+.material-icons {
+  display:inline-block;
+  padding-left:15px;
+}
