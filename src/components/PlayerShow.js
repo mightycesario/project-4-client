@@ -17,8 +17,6 @@ export class PlayerShow extends Component {
   }
 
   componentDidMount() {
-    console.log("playershow")
-    console.log("age:::::", this.state.age, typeof this.state.age)
     this.fetchData()
   }
 
@@ -26,32 +24,32 @@ export class PlayerShow extends Component {
   fetchData = () => {
     PlayerModel.show(this.props.match.params.id)
       .then(res => {
-        console.log("RES", res)
         this.setState({
           name: res.player.name,
           team: res.player.team,
-          team: res.player.position,
+          position: res.player.position,
           age:  res.player.age,
           photo: res.player.photo
         })
       })
-  }
-
-  editToggle = () => {
-    this.setState({
-      toggleEdit: !this.state.toggleEdit
-    })
-  }
-
-
-  updateAfterEdit = (passedInData) => {
-    this.setState({
-      name: passedInData.player.name,
-      team: passedInData.player.team,
-      position: passedInData.player.position,
-      age: passedInData.player.age,
-      photo: passedInData.player.photo
-    })
+    }
+    
+    editToggle = () => {
+      this.setState({
+        toggleEdit: !this.state.toggleEdit
+      })
+    }
+    
+    
+    updateAfterEdit = (passedInData) => {
+      this.setState({
+        name: passedInData.player.name,
+        team: passedInData.player.team,
+        position: passedInData.player.position,
+        age: passedInData.player.age,
+        photo: passedInData.player.photo
+      })
+      console.log("POSITION in PlayerShow", this.state.position)
   }
 
   handleDelete = () => {
@@ -63,8 +61,8 @@ export class PlayerShow extends Component {
   
   render() {
     return (
-      <div>
-        <h3 style={{marginTop:"10px"}}>
+      <div className="playershow-data">
+        <h3 style={{marginTop:"10px", color:"Red"}}>
           {!this.state.photo ? this.textContent="Add a player photo!" : <img className="player-show-image" width="450" height="250" src={this.state.photo} />}
         </h3>
         <h3>Name: {this.state.name}</h3>
@@ -72,7 +70,7 @@ export class PlayerShow extends Component {
         <h3>Position: {this.state.position}</h3>
         <h3>Age: {this.state.age}</h3>
         <h3><button className="btn" onClick={this.editToggle}>Edit</button><button onClick={this.handleDelete} style={{marginLeft:"30px"}} className="btn">Delete</button></h3>
-        {this.state.toggleEdit && <EditPlayer updateAfterEdit={this.updateAfterEdit} name={this.state.name} team={this.state.team} age={this.state.age} photo={this.state.photo} playerId={this.props.match.params.id}/>}
+        {this.state.toggleEdit && <EditPlayer updateAfterEdit={this.updateAfterEdit} name={this.state.name} team={this.state.team} age={this.state.age} position={this.state.position}  photo={this.state.photo} playerId={this.props.match.params.id}/>}
       </div>
     )
   }

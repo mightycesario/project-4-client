@@ -244,7 +244,7 @@ ul input[type="checkbox"] {
 
 
 html {
-  /* background-image: url("./lightning-orange-bg-1980-rotate.jpg"); */
+  background-image: url("./grey-white-bg.jpg");
   background-size:100%;
 }
 
@@ -265,7 +265,7 @@ nav ul li {
 
 .nav-links li a {
   color:#ffa805;
-  font-size: 18px;
+  font-size: 25px;
 }
 
 .nav-links li a:focus, .nav-links li a:hover, .nav-links li a:visited, .nav-links li a:active {
@@ -279,7 +279,7 @@ nav ul li {
   /* height: 200px; */
   margin: 10px;
   padding: 20px;
-  text-align: left;
+  text-align: center;
   background-color: #e2e2e2;
 }
 
@@ -313,7 +313,6 @@ nav ul li {
   color:black;
 }
 
-
 .image-container {
   width: 100%;
 }
@@ -330,4 +329,34 @@ nav ul li {
 .material-icons {
   display:inline-block;
   padding-left:15px;
+}
+
+.player-count-message, .playershow-data h3 {
+  color:#ffa805;
+  font-weight: bold;
+  font-size:20px;
+}
+
+.player-count-value {
+  color:#ffa805;
+  font-size:40px;
+  font-weight: bold;
+}
+
+.about {
+  font-weight: normal;
+}
+
+.about a {
+  font-size:20px;
+}
+
+.about a:hover {
+  text-decoration: underline;
+}
+
+.about-photo {
+  display:inline-block;
+  float: left;
+  padding: 10px;
 }

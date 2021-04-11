@@ -13,7 +13,7 @@ sports_rugby</span></Link></h1>
               <li><Link to="/about">about</Link></li>
               {/* <li><Link to="/contenttwo">contenttwo</Link></li> */}
               <li><Link to="/players">players</Link></li>
-              <li><Link to="/search" onClick={this.handleSearch}><button className="btn">Search</button></Link></li>
+              {/* <li><Link to="/search" onClick={this.handleSearch}><button className="btn">Search</button></Link></li> */}
               <li><Link to="/players/new" onClick={this.handleSearch}><button className="btn">Add</button></Link></li>
             </ul>
           </nav>

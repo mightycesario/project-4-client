@@ -6,6 +6,7 @@ export default class NewPlayer extends Component {
   state = {
     name: "",
     team: "",
+    position: "",
     age: "",
     photo: ""
   }
@@ -38,7 +39,7 @@ export default class NewPlayer extends Component {
         <form onSubmit={this.handleSubmit}>
 
           <div className="form-input">
-            <label htmlFor="title">Name</label>
+            <label htmlFor="name">Name</label><br/>
             <input 
               type="text" 
               name="name" 
@@ -47,7 +48,7 @@ export default class NewPlayer extends Component {
           </div>
 
           <div className="form-input">
-            <label htmlFor="publisher">Team</label>
+            <label htmlFor="team">Team</label><br/>
             <input 
               type="text" 
               name="team" 
@@ -56,7 +57,16 @@ export default class NewPlayer extends Component {
           </div>
 
           <div className="form-input">
-            <label htmlFor="completed">Age</label>
+            <label htmlFor="position">Position</label><br/>
+            <input 
+              type="text" 
+              name="position" 
+              onChange={this.handleChange}
+              value={this.state.position} />
+          </div>
+
+          <div className="form-input">
+            <label htmlFor="age">Age</label><br/>
             <input 
               type="text" 
               name="age" 
@@ -65,7 +75,7 @@ export default class NewPlayer extends Component {
           </div>
 
           <div className="form-input">
-            <label htmlFor="coverArtUrl">Image URL</label>
+            <label htmlFor="photo">Image URL</label><br/>
             <input 
               type="text" 
               name="photo" 

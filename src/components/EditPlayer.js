@@ -18,6 +18,7 @@ export class EditPlayer extends Component {
     PlayerModel.update(this.props.playerId, this.state)
       .then(data => {    
           this.props.updateAfterEdit(data)
+          console.log("POSITION in EditPlayer", this.props.position)
       })
   }
 

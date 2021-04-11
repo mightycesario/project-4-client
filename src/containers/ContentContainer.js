@@ -4,12 +4,6 @@ import About from '../components/About'
 
 export class ContentContainer extends Component {
   
-  componentDidMount() {
-    console.log("content container mounted")
-    console.log("=========", this.props.playerData)
-  }
-  
-  
   render() {
     return (
       <div>        
